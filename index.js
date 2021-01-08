@@ -8,9 +8,9 @@ app.use(express.static(__dirname+'/public'));
 // Use view engine
 let hbs = expressHbs.create({
    extname: 'hbs',
-   defaultlayout: 'layout',
-   layoutsDir: __dirname + 'views/layouts/',
-   partialsDir: __dirname + 'views/partials/'
+   defaultLayout: 'layout',
+   layoutsDir: __dirname + '/views/layouts/',
+   partialsDir: __dirname + '/views/partials/'
 });
 
 app.engine('hbs',hbs.engine);
@@ -27,7 +27,7 @@ app.get('/:page', (req,res)=>{
       category: 'Shop Category',
       cart: "Shopping Cart"
    };
-   let page = request.params.page;
+   let page = req.params.page;
    res.render(page, {banner: banners[page]});
 });
 
