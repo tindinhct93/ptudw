@@ -1,11 +1,11 @@
 let controller = {};
 let models = require('../models');
-let Category = models.Category;
+let Brand = models.Brand;
 
 controller.getAll = async ()=> {
     try {
-        let data = await Category.findAll({
-            attributes: ['id','name','imagepath','summary'],
+        let data = await Brand.findAll({
+            attributes: ['id','name','imagepath'],
             include: [{model:models.Product}]
         });
         //return data.toJSON;

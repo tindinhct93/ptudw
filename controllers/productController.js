@@ -21,4 +21,19 @@ controller.getTredingProducts = async ()=> {
     }
 }
 
+controller.getAll = async ()=> {
+    try {
+        let data = await Product.findAll({
+            include: [{model: models.Category}],
+            attributes: ['id','name','imagepath','price']
+            //include: []
+        });
+        //return data.toJSON;
+        //let new_data = data.map(item=>{return {...item.dataValues}})
+        return data;
+    } catch (e) {
+        throw new Error(e);
+    }
+}
+
 module.exports = controller;

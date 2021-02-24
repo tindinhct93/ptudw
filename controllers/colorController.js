@@ -1,12 +1,12 @@
 let controller = {};
 let models = require('../models');
-let Category = models.Category;
+let Color = models.Color;
 
 controller.getAll = async ()=> {
     try {
-        let data = await Category.findAll({
-            attributes: ['id','name','imagepath','summary'],
-            include: [{model:models.Product}]
+        let data = await Color.findAll({
+            attributes: ['id','name','imagepath','code'],
+            include: [{model:models.ProductColor}]
         });
         //return data.toJSON;
         //let new_data = data.map(item=>{return {...item.dataValues}})
