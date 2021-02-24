@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="123189e6-c83f-4687-87b7-f57c254eb404" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/categoryController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/productController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/npm-shrinkwrap.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/indexRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/productRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +66,7 @@
       <workItem from="1614086481047" duration="9489000" />
       <workItem from="1614096383520" duration="356000" />
       <workItem from="1614096764190" duration="710000" />
+      <workItem from="1614159050404" duration="762000" />
     </task>
     <servers />
   </component>
