@@ -17,7 +17,7 @@ $(function() {
     autoplayTimeout: 5000,
     loop:true,
     nav:false,
-    dots:false,
+    dots:true,
     responsive:{
       0:{
         items:1
