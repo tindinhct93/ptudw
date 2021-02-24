@@ -29,9 +29,9 @@ app.get('/sync',async (req,res)=> {
    res.send('Sync completed');
 })
 
-
+const port = process.env.PORT || 5000;
 // Start sever
 app.set('port',process.env.PORT || 5000);
-app.listen(app.get('port'), ()=> {
-   console.log(`Server is runing at port ${app.get('port')}`);
+app.listen(port, () => {
+   console.log('Express server listening on port', port)
 });
