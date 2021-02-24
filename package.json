@@ -13,9 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@handlebars/allow-prototype-access": "^1.0.3",
     "express": "^4.17.1",
-    "express-handlebars": "^1.1.0",
+    "express-handlebars": "^5.2.1",
     "gulp": "^4.0.0",
     "nodemon": "^2.0.7",
     "pg": "^8.5.1",
