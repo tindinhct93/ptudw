@@ -1,6 +1,4 @@
 const express = require('express');
-
-
 const expressHbs = require('express-handlebars');
 let app = express();
 
@@ -9,6 +7,7 @@ app.use(express.static(__dirname+'/public'));
 
 // Use view engine
 let hbs = expressHbs.create({
+   handlebars:require('handlebars'),
    extname: 'hbs',
    defaultLayout: 'layout',
    layoutsDir: __dirname + '/views/layouts/',
