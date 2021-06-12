@@ -21,16 +21,67 @@ controller.getTredingProducts = async ()=> {
     }
 }
 
-controller.getAll = async ()=> {
+controller.getAll = async (query)=> {
     try {
-        let data = await Product.findAll({
+        let options = {
             include: [{model: models.Category}],
-            attributes: ['id','name','imagepath','price']
-            //include: []
-        });
+            attributes: ['id','name','imagepath','price'],
+            where: {}
+        }
+        if (query.category) {
+            options.where.categoryId = query.category;
+        }
+        let data = await Product.findAll(options);
         //return data.toJSON;
         //let new_data = data.map(item=>{return {...item.dataValues}})
         return data;
+    } catch (e) {
+        throw new Error(e);
+    }
+}
+
+controller.getById = async (id)=> {
+    try {
+        let product = await Product.findOne({
+            where: {id:id},
+            include: [{model: models.Category}],
+        });
+        let [Specifications,Comments,Reviews] = await Promise.all([
+            // array with Productspecification have the ID = productid
+            models.ProductSpecification.findAll(
+                {
+                    where: {productId:id},
+                    include: [{model: models.Specification}]
+                }),
+            models.Comment.findAll(
+                {
+                    where: {productId:id,parentCommentId:null},
+                    include: [{model: models.User},
+                        {
+                            model: models.Comment,
+                            as:'SubComments',
+                            include: [{model: models.User}]
+                        }
+                    ]
+                }
+            ),
+            models.Review.findAll(
+                {
+                    where: {productId:id},
+                    include: [{model: models.User}]
+                }
+            )
+        ])
+        product.Specifications = Specifications;
+        product.Comments = Comments;
+        product.Reviews = Reviews;
+        let stars = [];
+        for (let i =1; i<=5; i++) {
+            stars.push(Reviews.filter(item => item.rating ==i).length);
+        }
+        product.stars = stars;
+        return product;
+
     } catch (e) {
         throw new Error(e);
     }
