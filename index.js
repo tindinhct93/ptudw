@@ -1,10 +1,10 @@
 const express = require('express');
 const expressHbs = require('express-handlebars');
 let app = express();
+const helper = require('./controllers/helper.js')
 
 // Set public static folder
 app.use(express.static(__dirname+'/public'));
-let helper = require('./controllers/helper');
 // Use view engine
 let hbs = expressHbs.create({
    handlebars:require('handlebars'),
@@ -34,31 +34,39 @@ app.use(cookieParser());
 // Session
 let session = require('express-session');
 app.use(session({
-   cookie:{httpOnly: true, maxAge: 30*24*60*60*1000 },
+   cookie:{httpOnly: true, maxAge: null},
    secret: 's3cret',
    resave: false,
    saveUninitialized: false
 }))
-/*
-let cart = require('./controllers/cartController');
+
+let Cart = require('./controllers/cartController');
 app.use((req,res,next)=> {
    let cart = new Cart(req.session.cart ? req.session.cart : {})
    req.session.cart = cart;
-   res.local.totalQuantity = cart.totalQuantity;
+   res.locals.totalQuantity = cart.totalQuantity;
+   res.locals.fullname = req.session.user ? req.session.user.fullname : '';
+   res.locals.isLoggedIn = req.session.user ? true : false;
+
    next();
 })
-*/
+
 
 app.use('/',require('./routes/indexRouter'));
 app.use('/products',require('./routes/productRouter'));
 app.use('/cart',require('./routes/cartRouter'));
-
+app.use('/momo',require('./routes/momoRouter'));
+app.use('/users',require('./routes/userRouter'));
 
 
 app.get('/sync',async (req,res)=> {
    let model =require('./models');
    await model.sequelize.sync();
    res.send('Sync completed');
+})
+
+app.use((err,req,res,next)=> {
+   res.send('Something wrong happend');
 })
 
 const port = process.env.PORT || 5000;

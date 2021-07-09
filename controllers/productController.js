@@ -1,6 +1,9 @@
 let controller = {};
 let models = require('../models');
 let Product = models.Product;
+let Sequelize = require('sequelize');
+let op = Sequelize.Op;
+
 
 controller.getTredingProducts = async ()=> {
     try {
@@ -26,10 +29,25 @@ controller.getAll = async (query)=> {
         let options = {
             include: [{model: models.Category}],
             attributes: ['id','name','imagepath','price'],
-            where: {}
+            where: {
+                price : {
+                    [op.gte]: query.min,
+                    [op.lte]: query.max
+                }
+            }
         }
-        if (query.category) {
+        if (query.category >0) {
             options.where.categoryId = query.category;
+        }
+        if (query.brand>0) {
+            options.where.brandId = query.brand;
+        }
+        if (query.color>0) {
+            options.include.push({
+                model: models.ProductColor,
+                attributes: [],
+                where:{colorId: query.color}
+            })
         }
         let data = await Product.findAll(options);
         //return data.toJSON;
