@@ -13,7 +13,7 @@ controller.getUserByEmail = (email) => {
 
 controller.createUser = (user) => {
     let salt = bcrypt.genSaltSync(10);
-    user.password = bcrypt.hashSync(user.password,salt);
+        user.password = bcrypt.hashSync(user.password,salt);
     return User.create(user);
 }
 

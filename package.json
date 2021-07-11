@@ -22,6 +22,8 @@
     "express-session": "^1.17.1",
     "gulp": "^4.0.0",
     "handlebars": "^4.5.3",
+    "install": "^0.13.0",
+    "mkcert": "^1.4.0",
     "mongodb": "^3.6.9",
     "nodemon": "^2.0.7",
     "pg": "^8.5.1",

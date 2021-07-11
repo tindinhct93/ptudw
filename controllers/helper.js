@@ -29,17 +29,19 @@ const ordinary = {
     checkPayURl: ['requestId','orderId','message','localMessage','payUrl','errorCode','requestType']
 }
 
-const createRawSignature = (data,options) => {
+helper.createRawSignature = (data,options) => {
     itemList = ordinary[options];
     //maps and join
-    itemList.map(item=>{
-        `${item}=${data[item]}`
+    resultList = itemList.map(item=>
+    {let a = `${item}=${data[item]}`;
+    return a;
     })
-    return itemList.join("+");
+    return resultList.join("&");
 }
 
+
 helper.createSignature = (data,options,serectkey) => {
-    let rawSignature = createRawSignature(data,options);
+    let rawSignature = helper.createRawSignature(data,options);
     //let rawSignature = `requestId=${data.requestId}&orderId=${data.orderId}&message=${data.message}&localMessage=${data.localMessage}&8payUrl=${data.payUrl}&errorCode=${data.errorCode}&requestType=${data.requestType}`
     let signature = crypto.createHmac('sha256', serectkey)
                    .update(rawSignature)
