@@ -1,17 +1,18 @@
 const axios = require("axios");
-const {v1:uuidv1} = require('uuid');
-const helper = require("./helper.js");
 const crypto = require('crypto');
 
-const serectkey = "3aPvOd59gY7eHQpCzDwJ77VhOw3tKBxI"
+const {v1:uuidv1} = require('uuid');
+const helper = require("./helper.js");
+
+const serectkey = process.env.Momoserectkey;
 
 const endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
 const hostname = "https://test-payment.momo.vn";
 const path = "/gw_payment/transactionProcessor";
 
 let options = {};
-options.partnerCode = "MOMOQPL020210613";
-options.accessKey = "DMx7wb6xCpvyDDki"
+options.partnerCode = process.env.MomopartnerCode;
+options.accessKey = process.env.MomoaccessKey;
 options.orderInfo = "pay with MoMo"
 options.returnUrl = "https://localhost:5000"
 options.notifyUrl = "https://callback.url/5000"

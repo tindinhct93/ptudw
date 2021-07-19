@@ -7,3 +7,4 @@ client.connect(async (err) => {
     await collection.insertOne({name:"Tin"});
 // perform actions on the collection object
 client.close(); });
+

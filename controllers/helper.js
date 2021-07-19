@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+const base64url = require('b64url')
 let helper = {};
 helper.createStarList = (stars) => {
     let str = `<ul class="list">
@@ -47,6 +48,30 @@ helper.createSignature = (data,options,serectkey) => {
                    .update(rawSignature)
                    .digest('hex');
     return signature
+}
+
+helper.parse_signed_request = (signed_request,secret) => {
+    encoded_data = signed_request.split('.',2);
+    // decode the data
+    sig = encoded_data[0];
+    json = base64url.decode(encoded_data[1]);
+    data = JSON.parse(json); // ERROR Occurs Here!
+
+    // check algorithm - not relevant to error
+    if (!data.algorithm || data.algorithm.toUpperCase() != 'HMAC-SHA256') {
+        console.error('Unknown algorithm. Expected HMAC-SHA256');
+        return null;
+    }
+
+    // check sig - not relevant to error
+    expected_sig = crypto.createHmac('sha256',secret).update(encoded_data[1]).digest('base64').replace(/\+/g,'-').replace(/\//g,'_').replace('=','');
+    if (sig !== expected_sig) {
+        console.error('Bad signed JSON Signature!');
+        return null;
+    }
+
+    return data;
+
 }
 
 module.exports = helper;
