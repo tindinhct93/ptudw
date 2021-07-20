@@ -9,10 +9,9 @@
     }
 
     function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-        console.log('statusChangeCallback');
-        console.log(response);                   // The current login status of the person.
+        console.log('statusChangeCallback');     // The current login status of the person.
         if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-            testAPI(response);
+            window.location.replace('facebook');
         }
     }
 
@@ -37,24 +36,6 @@
         js.src = "https://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
-    function getFbUserData(){
-        FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
-                function (response) {
-                    //Send ajax lên server NodeJS nè.
-                    console.log(response)
-                });
-    }
-
-    function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-        // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-            console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me', function(response) {
-                document.getElementById('status').innerHTML =
-                        'Thanks for logging in, ' + response.name + '!';
-                window.location.replace('facebook');
-            });
-    }
 </script>
 
 
@@ -107,9 +88,6 @@
                             <div class="col-md-12">
                             <div id="status">
                             </div></div>
-                            <div class="col-md-12">
-
-                            </div>
 						</form>
 					</div>
 				</div>

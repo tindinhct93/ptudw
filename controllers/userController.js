@@ -11,6 +11,14 @@ controller.getUserByEmail = (email) => {
     })
 }
 
+controller.getUserByFBID = (FBID) => {
+    return User.findOne({
+        where: {
+            fbID:FBID
+        }
+    })
+}
+
 controller.createUser = (user) => {
     let salt = bcrypt.genSaltSync(10);
         user.password = bcrypt.hashSync(user.password,salt);

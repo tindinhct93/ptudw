@@ -1,6 +1,10 @@
 const crypto = require('crypto');
-const base64url = require('b64url')
+const base64url = require('b64url');
+const axios = require('axios');
 let helper = {};
+const fbappID = process.env.fbappID;
+const fbSecret = process.env.fbSecret;
+
 helper.createStarList = (stars) => {
     let str = `<ul class="list">
     <li><a href="#">5 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
@@ -73,5 +77,45 @@ helper.parse_signed_request = (signed_request,secret) => {
     return data;
 
 }
+
+helper.getFBID = async (sign_request) => {
+
+    let signedRequestdata = await helper.parse_signed_request(sign_request, fbSecret);
+    let code = signedRequestdata.code;
+    try {
+        // DÙng fetch lấy apptoken về
+        const appTokenLink = 'https://graph.facebook.com/oauth/access_token?client_id=' + fbappID + '&client_secret=' + fbSecret + '&grant_type=client_credentials'
+        let appTokenRes = await axios.get(appTokenLink);
+        let appToken = appTokenRes.data.access_token;
+
+        // DÙng fetch lấy userID
+        const urlForAccessToken = `https://graph.facebook.com/v11.0/oauth/access_token?client_id=${fbappID}&redirect_uri=&client_secret=${fbSecret}&code=${code}`;
+        let TokenRes = await axios.get(urlForAccessToken);
+        let accessToken = TokenRes.data.access_token;
+
+        // Dùng fetch lấy userID về
+        const URLdebugtoken = `https://graph.facebook.com/v11.0/debug_token?input_token= ${accessToken}&access_token=${appToken}`
+        let idRes = await axios.get(URLdebugtoken);
+        let FBID = idRes.data.data.user_id;
+        return {FBID,accessToken}
+    } catch (e) {
+        console.error(`Can not get the userID with error ${e} `);
+        return;
+    }
+}
+
+helper.getFBinfo = async (FBID,accessToken) => {
+    // Dùng fetch lấy email về.
+    const URLemail = `https://graph.facebook.com/v11.0/me?fields=id%2Cname%2Cemail&access_token=${accessToken}`
+    try {
+        let emailRes = await axios.get(URLemail);
+        let email = emailRes.data.email;
+        return email
+    }   catch (e) {
+        console.error(`Can not get the userID with error ${e} `);
+        return;
+    }
+}
+
 
 module.exports = helper;
