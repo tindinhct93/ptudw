@@ -1,81 +1,5 @@
-const express = require('express');
-require('dotenv').config()
-const expressHbs = require('express-handlebars');
-let app = express();
-const helper = require('./controllers/helper.js')
-
-// Set public static folder
-app.use(express.static(__dirname+'/public'));
-// Use view engine
-let hbs = expressHbs.create({
-   handlebars:require('handlebars'),
-   extname: 'hbs',
-   defaultLayout: 'layout',
-   layoutsDir: __dirname + '/views/layouts/',
-   partialsDir: __dirname + '/views/partials/',
-   helpers: {
-      createStarList: helper.createStarList,
-      createStar: helper.createStar
-   }
-});
-
-app.engine('hbs',hbs.engine);
-
-app.set('view engine', 'hbs');
-
-//Body Parser
-let bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}))
-
-//Cookie parser
-let cookieParser = require('cookie-parser');
-app.use(cookieParser());
-
-// Session
-let session = require('express-session');
-app.use(session({
-   cookie:{httpOnly: true, maxAge: null},
-   secret: 's3cret',
-   resave: false,
-   saveUninitialized: false
-}))
-
-let Cart = require('./controllers/cartController');
-app.use((req,res,next)=> {
-   let cart = new Cart(req.session.cart ? req.session.cart : {})
-   req.session.cart = cart;
-   res.locals.totalQuantity = cart.totalQuantity;
-   res.locals.user = req.session.user ? req.session.user : '';
-   res.locals.fullname = req.session.user ? req.session.user.fullname : '';
-   res.locals.isLoggedIn = req.session.user ? true : false;
-
-   next();
-})
-
-
-app.use('/',require('./routes/indexRouter'));
-app.use('/products',require('./routes/productRouter'));
-app.use('/cart',require('./routes/cartRouter'));
-app.use('/momo',require('./routes/momoRouter'));
-app.use('/users',require('./routes/userRouter'));
-
-
-app.get('/sync',async (req,res)=> {
-   let model =require('./models');
-   await model.sequelize.sync();
-   res.send('Sync completed');
-})
-
-app.use((err,req,res,next)=> {
-   res.send(err);
-})
-
-const port = process.env.PORT || 5000;
-// Start sever
-app.set('port',process.env.PORT || 5000);
-
-key = `-----BEGIN RSA PRIVATE KEY-----
+module.exports = {
+    RSAKEY : `-----BEGIN RSA PRIVATE KEY-----
 MIIEpAIBAAKCAQEAwQYxenDi1wCpiuvfCmmtgf4q5WoFqz1JX4QmFBFQ4iP4ky+v
 ralOFn3pZk1/wURbZZu7nYEQOm+AX2esiZD6c1chdyHpGfuqyRsnAan967czlych
 S15fvUtQ/Oi1um3YfSbtyRii/KUbvDAmdRcEZ4Cy9PKD8TEElxUSfHCNPhoJU3ms
@@ -101,8 +25,8 @@ LztCJnZWP2rrB5iI6Vp8+j6AqUJblCTPGL3q4IyPUFqaokK2qAUNsLh27PSn8JmO
 TQH/CQKBgQDMArjIDa+ZK4Ln22kPzwRklCMqNndtQIVdJOMAZKTB1kCqHXG2dPDD
 q12hJ8jA2nh69EyjbpLdox9eQYdEMbnOH9IYe40s7MHZrV8w9URVGDh6Xhc79iNa
 mFOWI2PQNm7dtFWFPgvd1+17dA15ReFO52S+/P+BIzzfNdxk4eAvoA==
------END RSA PRIVATE KEY-----`
-cert = `-----BEGIN CERTIFICATE-----
+-----END RSA PRIVATE KEY-----`,
+    CERT : `-----BEGIN CERTIFICATE-----
 MIIDRzCCAi+gAwIBAgIFNzY3MDcwDQYJKoZIhvcNAQELBQAwWTERMA8GA1UEAxMI
 SGVsbG8gQ0ExCzAJBgNVBAYTAk5QMRAwDgYDVQQIEwdCYWdtYXRpMRIwEAYDVQQH
 EwlLYXRobWFuZHUxETAPBgNVBAoTCEhlbGxvIENBMB4XDTIxMDcxMTE0NTA1N1oX
@@ -122,10 +46,4 @@ Ks2/ua1jTNk8VMC5hZo2BG7vcD9n/nl0QvNNovzRxzFNh+tMr8OPp5rEvVU8M4OX
 pLWQxTWjw5V2f6yU2aBqglneQbH9UMJY/Wr0i/h0O8csipkcHRq1Lj6Oa7oYEA0c
 rt2jmMv+SJlU2kUMynTMD18gOZWd2R2WPmdD
 -----END CERTIFICATE-----`
-
-//const https = require("https");
-//https.createServer({key,cert}, app).listen(5000)
-//console.log('Express server listening on port', port);
-app.listen(port, () => {
-   console.log('Express server listening on port', port)});
-
+}
