@@ -74,6 +74,7 @@ app.use((err,req,res,next)=> {
 const port = process.env.PORT || 5000;
 // Start sever
 app.set('port',process.env.PORT || 5000);
+
 key = `-----BEGIN RSA PRIVATE KEY-----
 MIIEpAIBAAKCAQEAwQYxenDi1wCpiuvfCmmtgf4q5WoFqz1JX4QmFBFQ4iP4ky+v
 ralOFn3pZk1/wURbZZu7nYEQOm+AX2esiZD6c1chdyHpGfuqyRsnAan967czlych
@@ -122,13 +123,10 @@ pLWQxTWjw5V2f6yU2aBqglneQbH9UMJY/Wr0i/h0O8csipkcHRq1Lj6Oa7oYEA0c
 rt2jmMv+SJlU2kUMynTMD18gOZWd2R2WPmdD
 -----END CERTIFICATE-----`
 
-const https = require("https");
-https.createServer({ key, cert }, app).listen(5000)
-console.log('OK')
-/*
+//const https = require("https");
+//https.createServer({ key, cert }, app).listen(5000)
+
 app.listen(port, () => {
    console.log('Express server listening on port', port)
 });
-
- */
 
