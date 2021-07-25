@@ -59,6 +59,7 @@ app.use('/products',require('./routes/productRouter'));
 app.use('/cart',require('./routes/cartRouter'));
 app.use('/momo',require('./routes/momoRouter'));
 app.use('/users',require('./routes/userRouter'));
+app.use('/contact',(req,res)=>res.render('contact'));
 
 
 app.get('/sync',async (req,res)=> {
@@ -71,7 +72,11 @@ app.use((err,req,res,next)=> {
    res.send(err);
 })
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
+app.listen('80','192.168.1.19', () => {
+   console.info(`Server started on port 80`);
+});
+/*
 // Start sever
 app.set('port',port);
 
@@ -86,3 +91,4 @@ console.log('Express server listening on port', port);
 //app.listen(port, () => {
  //  console.log('Express server listening on port', port)});
 
+*/

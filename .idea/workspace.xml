@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="123189e6-c83f-4687-87b7-f57c254eb404" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/vendors/skroll.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cart.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/cart.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/category.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/category.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/checkout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/checkout.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/confirmation.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/confirmation.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/contact.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/contact.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/layout.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/footer.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/footer.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/single-blog.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/single-blog.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/single-product.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/single-product.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/tracking-order.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/tracking-order.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +50,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/vendors" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\code2021\ptudw\public\vendors" />
       <recent name="F:\code2021\ptudw" />
       <recent name="F:\code2021\ptudw\controllers" />
     </key>
@@ -148,6 +166,8 @@
       <workItem from="1626740421360" duration="13283000" />
       <workItem from="1626778091659" duration="3341000" />
       <workItem from="1626841320042" duration="981000" />
+      <workItem from="1627184522621" duration="76000" />
+      <workItem from="1627215242702" duration="5132000" />
     </task>
     <servers />
   </component>
@@ -167,28 +187,28 @@
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="2106" y="274" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1624287378763" />
-    <state width="1345" height="207" key="GridCell.Tab.0.bottom" timestamp="1626781462767">
+    <state width="1345" height="207" key="GridCell.Tab.0.bottom" timestamp="1627220251431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1626781462767" />
+    <state width="1345" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1627220251431" />
     <state width="1899" height="325" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1626192594533" />
     <state width="1345" height="190" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1626256467632" />
-    <state width="1345" height="207" key="GridCell.Tab.0.center" timestamp="1626781462767">
+    <state width="1345" height="207" key="GridCell.Tab.0.center" timestamp="1627220251431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="207" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1626781462767" />
+    <state width="1345" height="207" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1627220251431" />
     <state width="1899" height="325" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1626192594533" />
     <state width="1345" height="190" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1626256467632" />
-    <state width="1345" height="207" key="GridCell.Tab.0.left" timestamp="1626781462767">
+    <state width="1345" height="207" key="GridCell.Tab.0.left" timestamp="1627220251430">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="207" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1626781462767" />
+    <state width="1345" height="207" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1627220251430" />
     <state width="1899" height="325" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1626192594533" />
     <state width="1345" height="190" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1626256467632" />
-    <state width="1345" height="207" key="GridCell.Tab.0.right" timestamp="1626781462767">
+    <state width="1345" height="207" key="GridCell.Tab.0.right" timestamp="1627220251431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="207" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1626781462767" />
+    <state width="1345" height="207" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1627220251431" />
     <state width="1899" height="325" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1626192594533" />
     <state width="1345" height="190" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1626256467632" />
     <state width="1345" height="194" key="GridCell.Tab.1.bottom" timestamp="1626781001254">
