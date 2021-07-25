@@ -59,6 +59,7 @@ app.use('/products',require('./routes/productRouter'));
 app.use('/cart',require('./routes/cartRouter'));
 app.use('/momo',require('./routes/momoRouter'));
 app.use('/users',require('./routes/userRouter'));
+app.use('/contact',(req,res)=>res.render('contact'));
 
 
 app.get('/sync',async (req,res)=> {
