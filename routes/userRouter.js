@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-
+const multer = require('multer');
 const userController = require('../controllers/userController');
 const helper = require('../controllers/helper');
 
@@ -154,6 +154,57 @@ router.post('/register', async (req,res)=>{
         message: "You have register, Please loggged in",
         type: 'alert-primary'
     });
+})
+
+const storage = multer.diskStorage(
+    {
+        destination: './public/img/product',
+        filename: function ( req, file, cb ) {
+            //req.body is empty...
+            //How could I get the new_file_name property sent from client here?
+            cb( null, file.originalname );
+        }
+    }
+);
+
+const upload = multer({
+    storage: storage,
+    limits: {
+        fileSize: 1000000
+    },
+    fileFilter(req, file, cb) {
+        if (!file.originalname.match(/\.(jpg|png)$/)) {
+            return cb(new Error('Please upload a Image'))
+        }
+        cb(undefined, true)
+    }
+})
+
+let uploadInstance = upload.single('photos')
+const multerMiddeware = (req,res,next) => {
+    uploadInstance(req,res,function (err) {
+        if (err instanceof multer.MulterError) {
+            res.status(404);
+            return res.send(err.message);
+        }
+        next()
+})}
+
+router.post('/photoUpload',multerMiddeware, async (req,res,next)=>{
+    try {
+        const user = req.session.user;
+        let userDB = await userController.getUserByEmail(user.username);
+        userDB.avatarPath = `/img/product/${req.file.filename}`;
+        await userDB.save();
+        req.session.user = userDB;
+        let result = {}
+        result.status = true;
+        result.path = userDB.avatarPath;
+        return res.send(result);
+    } catch (e) {
+        console.log(e);
+    }
+
 })
 
 module.exports = router;

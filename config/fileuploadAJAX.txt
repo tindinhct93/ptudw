@@ -1,0 +1,43 @@
+<script>
+    $(document).ready(()=>{
+        $('#upload-photos').on('submit', function (event) {
+            event.preventDefault();
+            let files = $('#photos-input').get(0).files[0];
+            let formDataFile = new FormData();
+            formDataFile.append('photos',files,files.name);
+            uploadFiles(formDataFile);
+            // Get the files from input, create new FormData.
+        });
+    })
+
+    function uploadFiles(formData) {
+        $.ajax({
+            url: '/users/photoUpload',
+            method: 'post',
+            data: formData,
+            processData: false,
+            contentType: false,
+        }).done(handleSuccess).fail(function (xhr, status) {
+            alert(status);
+        });
+    }
+
+    function handleSuccess(data) {
+        if (data) {
+            var html = '';
+            for (var i=0; i < data.length; i++) {
+                var img = data[i];
+
+                if (img.status) {
+                    html += '<div class="col-xs-6 col-md-4"><a href="#" class="thumbnail"><img src="' + img.path + '" alt="' + img.filename  + '"></a></div>';
+                } else {
+                    html += '<div class="col-xs-6 col-md-4"><a href="#" class="thumbnail">Invalid file type - ' + img.filename  + '</a></div>';
+                }
+            }
+
+            $('#album').html(html);
+        } else {
+            alert('No images were uploaded.')
+        }
+    }
+</script>

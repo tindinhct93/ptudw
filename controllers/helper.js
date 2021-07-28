@@ -117,5 +117,7 @@ helper.getFBinfo = async (FBID,accessToken) => {
     }
 }
 
+helper.toFixedHBS = (number) => {
+    return Number.parseFloat(number).toFixed(2)};
 
 module.exports = helper;

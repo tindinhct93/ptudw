@@ -28,7 +28,7 @@ controller.getAll = async (query)=> {
     try {
         let options = {
             include: [{model: models.Category}],
-            attributes: ['id','name','imagepath','price'],
+            attributes: ['id','name','imagepath','price','categoryId'],
             where: {
                 price : {
                     [op.gte]: query.min,
@@ -39,6 +39,12 @@ controller.getAll = async (query)=> {
         if (query.category >0) {
             options.where.categoryId = query.category;
         }
+        if (query.search != "") {
+            options.where.name = {
+                [op.iLike]: `%${query.search}%`
+            }
+        }
+
         if (query.brand>0) {
             options.where.brandId = query.brand;
         }
@@ -49,7 +55,37 @@ controller.getAll = async (query)=> {
                 where:{colorId: query.color}
             })
         }
-        let data = await Product.findAll(options);
+        if (query.limit>0) {
+            options.limit = query.limit;
+            if (!query.page) query.page =1;
+            options.offset = query.limit*(query.page-1);
+        }
+        if (query.sort) {
+            switch (query.sort) {
+                case 'name':
+                    options.order = [
+                        ['name', 'ASC']
+                    ];
+                    break;
+                case 'price':
+                    options.order = [
+                        ['price', 'ASC']
+                    ];
+                    break;
+                case 'overallReview':
+                    options.order = [
+                        ['overallReview', 'DESC']
+                    ];
+                    break;
+                default: options.order = [
+                    ['name', 'ASC']
+                ];
+            }
+        }
+
+
+
+        let data = await Product.findAndCountAll(options); // {rows,count}
         //return data.toJSON;
         //let new_data = data.map(item=>{return {...item.dataValues}})
         return data;
