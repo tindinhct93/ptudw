@@ -3,6 +3,7 @@ require('dotenv').config()
 const expressHbs = require('express-handlebars');
 let app = express();
 const helper = require('./controllers/helper.js')
+const paginateHelper = require('express-handlebars-paginate');
 
 // Set public static folder
 app.use(express.static(__dirname+'/public'));
@@ -15,7 +16,9 @@ let hbs = expressHbs.create({
    partialsDir: __dirname + '/views/partials/',
    helpers: {
       createStarList: helper.createStarList,
-      createStar: helper.createStar
+      createStar: helper.createStar,
+      toFixedHBS: helper.toFixedHBS,
+      createPagination: paginateHelper.createPagination
    }
 });
 
@@ -67,11 +70,12 @@ app.get('/sync',async (req,res)=> {
    await model.sequelize.sync();
    res.send('Sync completed');
 })
-
+/*
 app.use((err,req,res,next)=> {
-   res.send(err);
+   res.status(500)
+   res.render('error', { error: err })
 })
-
+*/
 const port = process.env.PORT || 80;
 app.listen('80','192.168.1.19', () => {
    console.info(`Server started on port 80`);

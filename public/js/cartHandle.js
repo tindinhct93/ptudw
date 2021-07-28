@@ -48,7 +48,7 @@ function updateCartItem(id,quantity) {
         success: function (result) {
             $('#cart-badge').html(result.totalQuantity);
             $('#totalPrice').html("$"+result.totalPrice);
-            $(`#price${id}`).html("$"+result.item.price);
+            $(`#price${id}`).html("$"+result.item.price.toFixed(2));
         }})
 }
 

@@ -9,13 +9,18 @@ router.get('/',async (req,res,next)=> {
     if ((req.query.color == null) || isNaN(req.query.color)) req.query.color =0;
     if ((req.query.min == null) || isNaN(req.query.min)) req.query.min =0;
     if ((req.query.max == null) || isNaN(req.query.max)) req.query.max =100;
+    if (req.query.sort == null) req.query.sort = 'name';
+    if (req.query.limit == null || isNaN(req.query.limit)) req.query.limit = 9;
+    if (req.query.page == null || isNaN(req.query.page)) req.query.page = 1;
+    if ((req.query.search == null) || (req.query.search.trim() == '')) req.query.search ='';
+
     let categoryController = require("../controllers/categoryController");
     let brandController = require("../controllers/brandController");
     let colorController = require("../controllers/colorController");
     let productController = require("../controllers/productController");
     try {
         let [categories,brands,colors,products] = await Promise.all([
-            categoryController.getAll(),
+            categoryController.getAll(req.query),
             brandController.getAll(req.query),
             colorController.getAll(req.query),
             productController.getAll(req.query)
@@ -23,8 +28,12 @@ router.get('/',async (req,res,next)=> {
         res.locals.categories = categories;
         res.locals.brands = brands;
         res.locals.colors = colors;
-        res.locals.products = products;
-
+        res.locals.products = products.rows;
+        res.locals.pagination = {
+            page: parseInt(req.query.page),
+            limit: parseInt(req.query.limit),
+            totalRows: products.count,
+        }
         //res.locals.trendingProducts = trendingProducts;
         //res.send(data);
         res.render('category');

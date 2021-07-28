@@ -44,7 +44,7 @@
                                   </div>
                               </td>
                               <td>
-                                  <h5 id="price{{item.id}}">{{price}}</h5>
+                                  <h5 id="price{{item.id}}">{{toFixedHBS price}}</h5>
                               </td>
                           </tr>
                      {{/each}}
@@ -128,7 +128,7 @@
                                   <div class="checkout_btn_inner d-flex align-items-center">
                                       <a class="gray_btn" href="#">Continue Shopping</a>
                                       <a class="primary-btn ml-2" href="#">Proceed to checkout</a>
-                                      <a class="primary-btn ml-2" href="/momo">MOMO</a>
+                                      <a class="button bg-danger ml-2" href="/momo">MOMO</a>
                                   </div>
                               </td>
                           </tr>

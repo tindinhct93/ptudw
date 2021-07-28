@@ -70,6 +70,7 @@ body{
 .profile-work{
     padding: 14%;
     margin-top: -15%;
+    z-index: -1;
 }
 .profile-work p{
     font-size: 12px;
@@ -92,4 +93,8 @@ body{
 .profile-tab p{
     font-weight: 600;
     color: #0062cc;
+}
+
+#upload-photos {
+    z-index: 10000;
 }
