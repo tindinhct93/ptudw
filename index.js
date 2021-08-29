@@ -6,6 +6,7 @@ const helper = require('./controllers/helper.js')
 
 // Set public static folder
 app.use(express.static(__dirname+'/public'));
+const paginateHelper = require('express-handlebars-paginate')
 // Use view engine
 let hbs = expressHbs.create({
    handlebars:require('handlebars'),
@@ -15,7 +16,8 @@ let hbs = expressHbs.create({
    partialsDir: __dirname + '/views/partials/',
    helpers: {
       createStarList: helper.createStarList,
-      createStar: helper.createStar
+      createStar: helper.createStar,
+      createPagination: paginateHelper.createPagination
    }
 });
 
@@ -67,11 +69,11 @@ app.get('/sync',async (req,res)=> {
    await model.sequelize.sync();
    res.send('Sync completed');
 })
-
+/*
 app.use((err,req,res,next)=> {
    res.send(err);
 })
-
+*/
 const port = process.env.PORT || 5000;
 // Start sever
 app.set('port',process.env.PORT || 5000);
