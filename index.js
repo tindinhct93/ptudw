@@ -17,7 +17,8 @@ let hbs = expressHbs.create({
    helpers: {
       createStarList: helper.createStarList,
       createStar: helper.createStar,
-      createPagination: paginateHelper.createPagination
+      createPagination: paginateHelper.createPagination,
+      toFixedHBS: helper.toFixedHBS
    }
 });
 
