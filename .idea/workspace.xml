@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="123189e6-c83f-4687-87b7-f57c254eb404" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/userRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/index.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AsmforWeb/vuefrontend/vue-app" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -173,7 +176,29 @@
       <workItem from="1650088276971" duration="2867000" />
       <workItem from="1650168554209" duration="690000" />
       <workItem from="1650241118383" duration="2123000" />
-      <workItem from="1650290700065" duration="579000" />
+      <workItem from="1650290700065" duration="3590000" />
+      <workItem from="1650365126025" duration="926000" />
+      <workItem from="1650425455425" duration="1904000" />
+      <workItem from="1650450431743" duration="656000" />
+      <workItem from="1650471547432" duration="855000" />
+      <workItem from="1651079826702" duration="103000" />
+      <workItem from="1653261709155" duration="747000" />
+      <workItem from="1653265633922" duration="59000" />
+      <workItem from="1653314430912" duration="4324000" />
+      <workItem from="1653342628480" duration="1808000" />
+      <workItem from="1653530818832" duration="806000" />
+      <workItem from="1653536957786" duration="3691000" />
+      <workItem from="1653700413134" duration="162000" />
+      <workItem from="1653790002587" duration="820000" />
+      <workItem from="1653792034132" duration="24000" />
+      <workItem from="1669602906739" duration="2180000" />
+      <workItem from="1669702884259" duration="2903000" />
+      <workItem from="1669773949814" duration="3506000" />
+      <workItem from="1669799842540" duration="593000" />
+      <workItem from="1669949946532" duration="2373000" />
+      <workItem from="1676209340586" duration="370000" />
+      <workItem from="1676245012252" duration="2084000" />
+      <workItem from="1676336102579" duration="147000" />
     </task>
     <servers />
   </component>
@@ -181,29 +206,17 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1345" height="206" key="GridCell.Tab.0.bottom" timestamp="1650262392524">
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1676251459800">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="206" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650262392524" />
-    <state width="1345" height="206" key="GridCell.Tab.0.center" timestamp="1650262392524">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="206" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650262392524" />
-    <state width="1345" height="206" key="GridCell.Tab.0.left" timestamp="1650262392524">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="206" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650262392524" />
-    <state width="1345" height="206" key="GridCell.Tab.0.right" timestamp="1650262392524">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="206" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650262392524" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1676251459800" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/productController.js</url>
-          <line>87</line>
+          <line>84</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

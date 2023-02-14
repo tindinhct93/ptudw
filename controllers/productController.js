@@ -82,9 +82,6 @@ controller.getAll = async (query)=> {
                 ];
             }
         }
-
-
-
         let data = await Product.findAndCountAll(options); // {rows,count}
         //return data.toJSON;
         //let new_data = data.map(item=>{return {...item.dataValues}})

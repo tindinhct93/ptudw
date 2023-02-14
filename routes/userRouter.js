@@ -16,7 +16,6 @@ router.get('/login',(req,res)=>{
     res.render('login');
 })
 
-
 router.post('/login',async (req,res,next)=>{
     try    {
         const {username,password} = req.body;
@@ -85,7 +84,7 @@ router.get('/facebook',async (req,res,next)=>{
         console.error(`Can not login with error ${String(e)}`)
         next(e)
     }
-        // Link FB USerID với tài khoản// Mỗi FB UserID chỉ link được với một tài khoản//Link sai thì báo lỗi
+        // Link FB USerID với tài khoản// Mỗi cFB UserID chỉ link được với một tài khoản//Link sai thì báo lỗi
         //Task01/Isolation: LinkFB ID.
         // Change the UserSchema // Study about that // Why we don't open a pet propject to do that??????????
         // Task01-00: Study about Sequelize with a pet project - create, add, remove, association, migration (change Schema)...
