@@ -19,6 +19,6 @@ To use this feature, follow these steps:
 * The user clicks on the Facebook button (created using the Facebook SDK).
 * Facebook asks the user to grant profile reading permissions for the app.
 * After the user accepts, Facebook saves the user's information to cookies.
-* The web app takes this cookie, sends it to Facebook to parse the information, and Facebook responds with the result. The app then takes the information (in this case, the Facebook ID) to sign in.
+* The web app takes this cookie, sends it to Facebook to parse the information, and Facebook responds with the result. The app then takes the information (in this case, the Facebook ID) to sign the user in the website.
 
 ## Thank you for using our app!
