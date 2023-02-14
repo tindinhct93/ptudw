@@ -3,7 +3,7 @@
         "username": "iixyyekawapebp",
         "password": "8622cf5ae671528149eb097aeea8aeb60be1b8723c7834a5c1fb2baa8c25cd59",
         "database": "d19h9u2dfgh6ig",
-        "host": "ec2-3-227-68-43.compute-1.amazonaws.com\n",
+        "host": "ec2-3-227-68-43.compute-1.amazonaws.com",
         "dialect": "postgres",
         "dialectOptions": {
             "ssl": {
@@ -23,7 +23,7 @@
         "username": "iixyyekawapebp",
         "password": "8622cf5ae671528149eb097aeea8aeb60be1b8723c7834a5c1fb2baa8c25cd59",
         "database": "d19h9u2dfgh6ig",
-        "host": "ec2-3-227-68-43.compute-1.amazonaws.com\n",
+        "host": "ec2-3-227-68-43.compute-1.amazonaws.com",
         "dialect": "postgres",
         "dialectOptions": {
             "ssl": {
