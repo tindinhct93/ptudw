@@ -1,5 +1,5 @@
 # E-commerce App with Advanced Features
-This web application is designed to provide basic e-commerce functionalities like product listing, sorting, filtering, and pagination. In addition to these, the app also offers two advanced features:
+This web application is designed to provide basic e-commerce functionalities like product listing, sorting, filtering, and pagination; cart, user. In addition to these, the app also offers two advanced features:
 
 * MOMO Payment Integration: This feature allows users to pay for their orders using the MOMO payment gateway. The app captures the wallet from the MOMO and redirect when receiving the information from MOMO.
 
@@ -11,7 +11,8 @@ To use this feature, follow these steps:
 * Go to your user profile by clicking on your username.
 * Link your Facebook account to your app account.
 * You can now use your Facebook account to log in to the app.
-Note: The app is currently in development mode, and Facebook has updated its policy. Therefore, it only takes information from dev teams for testing purposes. If you want to test the app, please contact me via Facebook or Zalo.
+
+**Note** : The app is currently in development mode, and Facebook has updated its policy. Therefore, it only takes information from dev teams for testing purposes. If you want to test the app, please contact me via Facebook or Zalo.
 
 ## Facebook OAUTH2 Flow:
 
