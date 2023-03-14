@@ -14,6 +14,7 @@ let options = {};
 options.partnerCode = process.env.MomopartnerCode;
 options.accessKey = process.env.MomoaccessKey;
 options.orderInfo = "pay with MoMo"
+
 options.returnUrl = "https://localhost:5000"
 options.notifyUrl = "https://callback.url/5000"
 
@@ -29,9 +30,9 @@ controller.captureWallet = async (cart) => {
     //Hien tai chua co cart.
     let amount = "50000";
     let orderId = uuidv1();
-    let requestId = uuidv1();
-    let requestType = "captureMoMoWallet"
-    let extraData = "merchantName=;merchantId="
+    let requestId = orderId;
+    let requestType = "captureWallet"
+    let extraData = ""
     let captureData = {
         ...options,
         amount,
@@ -40,10 +41,14 @@ controller.captureWallet = async (cart) => {
         requestType,
         extraData
     }
+
     let signature = helper.createSignature(captureData,'captureWallet',serectkey);
     let body = JSON.stringify({
         ...options,
         requestId : requestId,
+        orderGroupId :'',
+        autoCapture :true,
+        lang: 'vi',
         amount : amount,
         orderId : orderId,
         extraData : extraData,

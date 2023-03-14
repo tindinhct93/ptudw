@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="123189e6-c83f-4687-87b7-f57c254eb404" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/views/profile.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/momo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/momoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/momoController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/momoRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/momoRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/userRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +50,7 @@
       <recent name="F:\code2021\ptudw\controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Debug">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ptudw/aroma/aroma/Aroma Shop-doc/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Node.js.momo.js">
     <configuration name="Debug" type="NodeJSConfigurationType" temporary="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -63,21 +66,24 @@
     <configuration name="momoController.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/controllers/momoController.js" working-dir="$PROJECT_DIR$/controllers">
       <method v="2" />
     </configuration>
+    <configuration name="momo.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/momo.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Node.js.Nodemon" />
       <item itemvalue="Node.js.Debug" />
       <item itemvalue="Node.js.HTTPSCreate.js" />
       <item itemvalue="Node.js.helper.js" />
       <item itemvalue="Node.js.momoController.js" />
+      <item itemvalue="Node.js.momo.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.momo.js" />
         <item itemvalue="Node.js.Debug" />
         <item itemvalue="Node.js.HTTPSCreate.js" />
         <item itemvalue="Node.js.momoController.js" />
         <item itemvalue="Node.js.helper.js" />
-        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +201,14 @@
       <workItem from="1669949946532" duration="2373000" />
       <workItem from="1676209340586" duration="370000" />
       <workItem from="1676245012252" duration="2084000" />
-      <workItem from="1676336102579" duration="2041000" />
+      <workItem from="1676336102579" duration="2699000" />
+      <workItem from="1676383113098" duration="1822000" />
+      <workItem from="1676961695332" duration="1057000" />
+      <workItem from="1678237500837" duration="10265000" />
+      <workItem from="1678286413300" duration="193000" />
+      <workItem from="1678530307378" duration="878000" />
+      <workItem from="1678544032932" duration="2969000" />
+      <workItem from="1678715195126" duration="3914000" />
     </task>
     <servers />
   </component>
@@ -207,6 +220,78 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1676251459800" />
+    <state width="1345" height="206" key="GridCell.Tab.0.bottom" timestamp="1678718069344">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="206" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1678718069344" />
+    <state width="1345" height="206" key="GridCell.Tab.0.center" timestamp="1678718069343">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="206" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1678718069343" />
+    <state width="1345" height="206" key="GridCell.Tab.0.left" timestamp="1678718069343">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="206" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1678718069343" />
+    <state width="1345" height="206" key="GridCell.Tab.0.right" timestamp="1678718069343">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="206" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1678718069343" />
+    <state width="1345" height="249" key="GridCell.Tab.1.bottom" timestamp="1678286199691">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1678286199691" />
+    <state width="1345" height="249" key="GridCell.Tab.1.center" timestamp="1678286199690">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1678286199690" />
+    <state width="1345" height="249" key="GridCell.Tab.1.left" timestamp="1678286199690">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1678286199690" />
+    <state width="1345" height="249" key="GridCell.Tab.1.right" timestamp="1678286199690">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1678286199690" />
+    <state width="1345" height="249" key="GridCell.Tab.2.bottom" timestamp="1678286199691">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1678286199691" />
+    <state width="1345" height="249" key="GridCell.Tab.2.center" timestamp="1678286199691">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1678286199691" />
+    <state width="1345" height="249" key="GridCell.Tab.2.left" timestamp="1678286199691">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1678286199691" />
+    <state width="1345" height="249" key="GridCell.Tab.2.right" timestamp="1678286199691">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1678286199691" />
+    <state width="1345" height="249" key="GridCell.Tab.3.bottom" timestamp="1678286199692">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1678286199692" />
+    <state width="1345" height="249" key="GridCell.Tab.3.center" timestamp="1678286199692">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1678286199692" />
+    <state width="1345" height="249" key="GridCell.Tab.3.left" timestamp="1678286199691">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1678286199691" />
+    <state width="1345" height="249" key="GridCell.Tab.3.right" timestamp="1678286199692">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="249" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1678286199692" />
+    <state x="351" y="328" width="1007" height="482" maximized="true" key="dock-window-1" timestamp="1678717624333">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="351" y="328" width="1007" height="482" maximized="true" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1678717624333" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1678272696325">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1678272696325" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -19,6 +19,7 @@ router.get('/login',(req,res)=>{
 router.post('/login',async (req,res,next)=>{
     try    {
         const {username,password} = req.body;
+
         let keepLoggedIn = (req.body.keepLoggedIn != undefined);
         let user = await userController.getUserByEmail(username);
         if (!user) {
@@ -27,7 +28,7 @@ router.post('/login',async (req,res,next)=>{
                 type: ALERT_DANGER
             })
         }
-        // Sửa thành middleware.......
+
         let isMatch = userController.comparePassword(password,user.password)
         if (isMatch) {
             req.session.cookie.maxAge = keepLoggedIn ? 30*23*60*60*100 : null;
@@ -68,15 +69,15 @@ router.get('/facebook',async (req,res,next)=>{
         let sign_request = req.cookies[nameCookie];
         let {FBID} = await helper.getFBID(sign_request);
         let user = await userController.getUserByFBID(FBID);
-        // Các case-link:
-        // Sign-in OK-> Sign-in
-        // Sign-in Not OK -> Give a text for please sign in and link the account
+
+        // Sign-in Not OK -> Give a text for please sign in by the web-account and link the account
         if (!user) {
             return res.render('login', {
                 message: FB_NOT_LINK,
                 type: ALERT_DANGER
             })
         }
+        // Sign-in OK
         req.session.cookie.maxAge = 30*23*60*60*100;
         req.session.user = user;
         return res.redirect('/');
@@ -84,15 +85,6 @@ router.get('/facebook',async (req,res,next)=>{
         console.error(`Can not login with error ${String(e)}`)
         next(e)
     }
-        // Link FB USerID với tài khoản// Mỗi cFB UserID chỉ link được với một tài khoản//Link sai thì báo lỗi
-        //Task01/Isolation: LinkFB ID.
-        // Change the UserSchema // Study about that // Why we don't open a pet propject to do that??????????
-        // Task01-00: Study about Sequelize with a pet project - create, add, remove, association, migration (change Schema)...
-
-
-        // Các case-link:
-            // Link OK -> auto link
-            // Nếu trùng -> Báo lỗi tại chỗ đó
 })
 
 router.get('/linkFB',async (req,res,next)=> {
@@ -101,12 +93,13 @@ router.get('/linkFB',async (req,res,next)=> {
         let sign_request = req.cookies[nameCookie];
         let {FBID} = await helper.getFBID(sign_request);
         let user = await userController.getUserByFBID(FBID);
-        // Các case-link:
-        // Sign-in OK-> Sign-in
-        // Sign-in Not OK -> Give a text for please sign in and link the account
+
+        // This FB ID is link with another account - Front-end will handle
         if (user) {
             return res.send({FBID: null});
         }
+
+        // Link the curent user with the FB ID.
         let currentUser = req.session.user;
         let userDB = await userController.getUserByEmail(currentUser.username);
         userDB.fbID = FBID;
@@ -203,7 +196,6 @@ router.post('/photoUpload',multerMiddeware, async (req,res,next)=>{
     } catch (e) {
         console.log(e);
     }
-
 })
 
 module.exports = router;
